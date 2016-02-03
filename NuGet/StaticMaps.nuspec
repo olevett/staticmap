@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>StaticMaps</id>
+    <version>0.0.1</version>
+    <description>A library for generating and display static maps</description>
+    <authors>Olly Levett</authors>
+    <language>en-us</language>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <dependencies>
+      <dependency id="Flurl" version="1.0.10" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\src\StaticMaps.Core\bin\Release\StaticMaps.Core.dll" target="lib\uap10.0\StaticMaps.Core.dll" />
+    <file src="..\src\StaticMaps.UWP\bin\Release\StaticMaps.UWP.pri" target="lib\uap10.0\StaticMaps.UWP.pri" />
+    <file src="..\src\StaticMaps.UWP\bin\Release\StaticMaps.UWP.dll" target="lib\uap10.0\StaticMaps.UWP.dll" />
+    <file src="..\src\StaticMaps.UWP\bin\Release\Themes\Generic.xbf" target="lib\uap10.0\StaticMaps.UWP\Themes\Generic.xbf" />
+    <file src="..\src\StaticMaps.UWP\bin\Release\StaticMaps.UWP.xr.xml" target="lib\uap10.0\StaticMaps.UWP\StaticMaps.UWP.xr.xml" />
+  </files>
+</package>

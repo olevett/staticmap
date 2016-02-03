@@ -1,7 +1,7 @@
 ﻿using Flurl;
 using System;
 
-namespace StaticMaps.Core
+namespace StaticMaps
 {
     /// <summary>
     /// Google Maps provider, using the public facing static maps API

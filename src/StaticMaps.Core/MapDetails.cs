@@ -1,4 +1,4 @@
-﻿namespace StaticMaps.Core
+﻿namespace StaticMaps
 {
     /// <summary>
     /// Details of a map, used to generate a Uri for the static map

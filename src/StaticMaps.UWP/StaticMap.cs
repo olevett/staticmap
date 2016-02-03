@@ -1,9 +1,8 @@
-﻿using StaticMaps.Core;
-using Windows.UI.Xaml;
+﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Imaging;
 
-namespace StaticMaps.UWP
+namespace StaticMaps
 {
     [TemplatePart(Name = ImagePartName, Type = typeof(Image))]
     public class StaticMap : Control
@@ -58,7 +57,6 @@ namespace StaticMaps.UWP
             set { SetValue(EncodedPolylineProperty, value); }
         }
 
-        // Using a DependencyProperty as the backing store for EncodedPolyline.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty EncodedPolylineProperty =
             DependencyProperty.Register("EncodedPolyline", typeof(string), typeof(StaticMap), new PropertyMetadata(null, OnEncodedPolylinePropertyChanged));
 

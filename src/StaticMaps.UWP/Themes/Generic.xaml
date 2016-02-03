@@ -1,17 +1,17 @@
-﻿<ResourceDictionary
+<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:StaticMaps.UWP">
+    xmlns:local="using:StaticMaps">
     <Style TargetType="local:StaticMap">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="local:StaticMap">
                     <Grid Background="{TemplateBinding Background}"
                           Margin="{TemplateBinding Padding}">
-                        <Image Stretch="None" x:Name="Image" />                        
+                        <Image Stretch="None" x:Name="Image" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-    </Style>    
+    </Style>
 </ResourceDictionary>

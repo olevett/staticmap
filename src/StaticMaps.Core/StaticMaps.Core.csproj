@@ -8,7 +8,7 @@
     <ProjectGuid>{89A61708-2BDD-437E-952D-8E645727DE7D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>StaticMaps.Core</RootNamespace>
+    <RootNamespace>StaticMaps</RootNamespace>
     <AssemblyName>StaticMaps.Core</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
