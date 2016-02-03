@@ -14,11 +14,11 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <ScrollViewer>
             <StackPanel>
-                <TextBlock Style="{ThemeResource HeaderTextBlockStyle}">Static Maps</TextBlock>
-                <TextBlock Style="{ThemeResource SubheaderTextBlockStyle}">Google Maps</TextBlock>
+                <TextBlock Style="{ThemeResource HeaderTextBlockStyle}" Margin="12,0">Static Maps</TextBlock>
+                <TextBlock Style="{ThemeResource SubheaderTextBlockStyle}" Margin="12,0">Google Maps</TextBlock>
                 <staticMaps:StaticMap
-                    Height="240"
-                    Width="600"
+                    Height="180"
+                    Width="360"
                     MapProvider="{StaticResource MapProvider}"
                     HorizontalAlignment="Left"
                     >
@@ -28,5 +28,5 @@
                 </staticMaps:StaticMap>
             </StackPanel>
         </ScrollViewer>
-    </Grid>    
+    </Grid>
 </Page>
