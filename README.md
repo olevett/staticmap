@@ -9,11 +9,16 @@ There is a sample project in StaticMaps.UWP.Sample, which boils down to
 - use the control
 
 ```Xaml
+...
+xmlns:staticMaps="using:StaticMaps"
+...
+
 <Page.Resources>
-    <staticMap:GoogleMapsProvider x:Key="MapProvider"/>
+    <staticMaps:GoogleMapsProvider x:Key="MapProvider"/>
 </Page.Resources>
+
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <staticMapUWP:StaticMap
+    <staticMaps:StaticMap
       Height="200"
       Width="100"
       MapProvider="{StaticResource MapProvider}"
