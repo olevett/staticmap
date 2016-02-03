@@ -66,5 +66,28 @@ namespace StaticMaps.Core.Test
 
             Assert.Contains("zoom=", actual.ToString());
         }
+
+        [Fact]
+        public void GetMapSource_EncodedPolyLine_DoesNotIncludeCenterOrZoom()
+        {
+            var sut = new GoogleMapsProvider();
+            var mapDetails = new MapDetails { EncodedPolyline = "blah" };
+
+            var actual = sut.GetStaticMap(mapDetails);
+
+            Assert.DoesNotContain("center", actual.ToString());
+            Assert.DoesNotContain("zoom", actual.ToString());
+        }
+
+        [Fact]
+        public void GetMapSource_EncodedPolyLine_IncludesPolyLine()
+        {
+            var sut = new GoogleMapsProvider();
+            var mapDetails = new MapDetails { EncodedPolyline = "blah" };
+
+            var actual = sut.GetStaticMap(mapDetails);
+
+            Assert.Contains("path=enc:blah", actual.ToString());
+        }
     }
 }

@@ -32,10 +32,15 @@ namespace StaticMaps.Core
 
             dictionary.Add("size", string.Format("{0}x{1}", mapDetails.Width, mapDetails.Height));
 
-            if (mapDetails.Center != null) dictionary.Add("center", string.Format("{0},{1}", mapDetails.Center.Latitude, mapDetails.Center.Longitude));
-
-            dictionary.Add("zoom", ConvertZoomToRange(mapDetails.Zoom).ToString());
-
+            if (string.IsNullOrEmpty(mapDetails.EncodedPolyline))
+            {
+                if (mapDetails.Center != null) dictionary.Add("center", string.Format("{0},{1}", mapDetails.Center.Latitude, mapDetails.Center.Longitude));
+                dictionary.Add("zoom", ConvertZoomToRange(mapDetails.Zoom).ToString());
+            }
+            else
+            {
+                dictionary.Add("path", "enc:" + mapDetails.EncodedPolyline);
+            }
             return dictionary;
         }
 

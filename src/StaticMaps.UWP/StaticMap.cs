@@ -52,6 +52,22 @@ namespace StaticMaps.UWP
             sender.UpdateMap();
         }
 
+        public string EncodedPolyline
+        {
+            get { return (string)GetValue(EncodedPolylineProperty); }
+            set { SetValue(EncodedPolylineProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for EncodedPolyline.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty EncodedPolylineProperty =
+            DependencyProperty.Register("EncodedPolyline", typeof(string), typeof(StaticMap), new PropertyMetadata(null, OnEncodedPolylinePropertyChanged));
+
+        private static void OnEncodedPolylinePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var sender = d as StaticMap;
+            sender.UpdateMap();
+        }
+
         protected override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
@@ -79,6 +95,7 @@ namespace StaticMaps.UWP
                 Height = Height,
                 Width = Width,
                 Center = Center,
+                EncodedPolyline = EncodedPolyline,
             };
         }
     }

@@ -24,5 +24,10 @@
         /// Zoom level between 0 and 1 of the map
         /// </summary>
         public double? Zoom { get; set; }
+
+        /// <summary>
+        /// An encoded polyline for the route (see https://developers.google.com/maps/documentation/utilities/polylinealgorithm)
+        /// </summary>
+        public string EncodedPolyline { get; set; }
     }
 }
