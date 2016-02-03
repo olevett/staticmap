@@ -7,7 +7,7 @@
     <ProjectGuid>{949387EF-EB60-4F2E-B15B-62D221B9A799}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>StaticMaps.UWP</RootNamespace>
+    <RootNamespace>StaticMaps</RootNamespace>
     <AssemblyName>StaticMaps.UWP</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
@@ -112,17 +112,16 @@
     <EmbeddedResource Include="Properties\StaticMaps.UWP.rd.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Themes\Generic.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\StaticMaps.Core\StaticMaps.Core.csproj">
       <Project>{89a61708-2bdd-437e-952d-8e645727de7d}</Project>
       <Name>StaticMaps.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace StaticMaps.Core
+namespace StaticMaps
 {
     /// <summary>
     /// Base interface for a map provider

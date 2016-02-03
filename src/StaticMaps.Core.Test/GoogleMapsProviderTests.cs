@@ -1,7 +1,7 @@
 ﻿using System;
 using Xunit;
 
-namespace StaticMaps.Core.Test
+namespace StaticMaps.Test
 {
     public class GoogleMapsProviderTests
     {

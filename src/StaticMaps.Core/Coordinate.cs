@@ -1,4 +1,4 @@
-﻿namespace StaticMaps.Core
+﻿namespace StaticMaps
 {
     public class Coordinate
     {

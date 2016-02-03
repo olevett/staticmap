@@ -5,11 +5,10 @@
     xmlns:local="using:StaticMaps.UWP.Sample"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:staticMapUWP="using:StaticMaps.UWP"
-    xmlns:staticMap="using:StaticMaps.Core"
+    xmlns:staticMaps="using:StaticMaps"
     mc:Ignorable="d">
     <Page.Resources>
-        <staticMap:GoogleMapsProvider x:Key="MapProvider"/>
+        <staticMaps:GoogleMapsProvider x:Key="MapProvider"/>
     </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -17,18 +16,17 @@
             <StackPanel>
                 <TextBlock Style="{ThemeResource HeaderTextBlockStyle}">Static Maps</TextBlock>
                 <TextBlock Style="{ThemeResource SubheaderTextBlockStyle}">Google Maps</TextBlock>
-                <staticMapUWP:StaticMap
+                <staticMaps:StaticMap
                     Height="240"
                     Width="600"
                     MapProvider="{StaticResource MapProvider}"
                     HorizontalAlignment="Left"
                     >
-                    <staticMapUWP:StaticMap.Center>
-                        <staticMap:Coordinate Latitude="51.45" Longitude="-2.583333"/>
-                    </staticMapUWP:StaticMap.Center>
-                </staticMapUWP:StaticMap>
+                    <staticMaps:StaticMap.Center>
+                        <staticMaps:Coordinate Latitude="51.45" Longitude="-2.583333"/>
+                    </staticMaps:StaticMap.Center>
+                </staticMaps:StaticMap>
             </StackPanel>
         </ScrollViewer>
-    </Grid>
-    
+    </Grid>    
 </Page>
