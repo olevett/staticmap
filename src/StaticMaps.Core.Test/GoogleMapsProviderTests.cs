@@ -44,5 +44,27 @@ namespace StaticMaps.Core.Test
 
             Assert.Contains("center=1,2", actual.ToString());
         }
+
+        [Fact]
+        public void GetMapSource_Zoom_MapsToInt()
+        {
+            var sut = new GoogleMapsProvider();
+            var mapDetails = new MapDetails { Zoom = 1 };
+
+            var actual = sut.GetStaticMap(mapDetails);
+
+            Assert.Contains("zoom=21", actual.ToString());
+        }
+
+        [Fact]
+        public void GetMapSource_Zoom_HasDefaultValue()
+        {
+            var sut = new GoogleMapsProvider();
+            var mapDetails = new MapDetails();
+
+            var actual = sut.GetStaticMap(mapDetails);
+
+            Assert.Contains("zoom=", actual.ToString());
+        }
     }
 }

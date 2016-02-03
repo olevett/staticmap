@@ -39,10 +39,10 @@ namespace StaticMaps.Core
             return dictionary;
         }
 
-        private static double ConvertZoomToRange(double? zoom)
+        private static int ConvertZoomToRange(double? zoom)
         {
             if (zoom == null) return 15;
-            return (zoom.Value * 21) + 1;
+            return (int)(zoom.Value * 21);
         }
     }
 }
