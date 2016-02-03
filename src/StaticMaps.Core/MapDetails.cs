@@ -11,7 +11,7 @@
         public double Width { get; set; }
 
         /// <summary>
-        /// Height in pixles of the desired image
+        /// Height in pixels of the desired image
         /// </summary>
         public double Height { get; set; }
 
