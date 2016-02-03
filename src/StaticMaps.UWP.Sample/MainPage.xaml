@@ -1,0 +1,34 @@
+﻿<Page
+    x:Class="StaticMaps.UWP.Sample.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:StaticMaps.UWP.Sample"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:staticMapUWP="using:StaticMaps.UWP"
+    xmlns:staticMap="using:StaticMaps.Core"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <staticMap:GoogleMapsProvider x:Key="MapProvider"/>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ScrollViewer>
+            <StackPanel>
+                <TextBlock Style="{ThemeResource HeaderTextBlockStyle}">Static Maps</TextBlock>
+                <TextBlock Style="{ThemeResource SubheaderTextBlockStyle}">Google Maps</TextBlock>
+                <staticMapUWP:StaticMap
+                    Height="240"
+                    Width="600"
+                    MapProvider="{StaticResource MapProvider}"
+                    HorizontalAlignment="Left"
+                    >
+                    <staticMapUWP:StaticMap.Center>
+                        <staticMap:Coordinate Latitude="51.45" Longitude="-2.583333"/>
+                    </staticMapUWP:StaticMap.Center>
+                </staticMapUWP:StaticMap>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+    
+</Page>
