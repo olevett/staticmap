@@ -42,7 +42,7 @@ namespace StaticMaps.Core.Test
 
             var actual = sut.GetStaticMap(mapDetails);
 
-            Assert.Contains("center=1,2", actual.ToString());
+            Assert.Contains("center=1%2C2", actual.ToString());
         }
 
         [Fact]

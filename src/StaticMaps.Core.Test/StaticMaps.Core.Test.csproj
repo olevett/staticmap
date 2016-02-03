@@ -39,7 +39,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="GoogleMapsProviderTests.cs" />
-    <Compile Include="Helpers\DictionaryExtensionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

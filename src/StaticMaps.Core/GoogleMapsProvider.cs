@@ -1,6 +1,5 @@
-﻿using StaticMaps.Helpers;
+﻿using Flurl;
 using System;
-using System.Collections.Generic;
 
 namespace StaticMaps.Core
 {
@@ -20,28 +19,21 @@ namespace StaticMaps.Core
         {
             if (mapDetails == null) throw new ArgumentNullException("mapDetails");
 
-            var queryStringParameters = MapToParameters(mapDetails).ToQueryString();
-            var completeUrl = string.Format("{0}{1}", GoogleMapsEndPoint, queryStringParameters);
+            var url = new Url(GoogleMapsEndPoint);
 
-            return new Uri(completeUrl, UriKind.Absolute);
-        }
-
-        private static IDictionary<string, string> MapToParameters(MapDetails mapDetails)
-        {
-            var dictionary = new Dictionary<string, string>();
-
-            dictionary.Add("size", string.Format("{0}x{1}", mapDetails.Width, mapDetails.Height));
+            url.SetQueryParam("size", string.Format("{0}x{1}", mapDetails.Width, mapDetails.Height));
 
             if (string.IsNullOrEmpty(mapDetails.EncodedPolyline))
             {
-                if (mapDetails.Center != null) dictionary.Add("center", string.Format("{0},{1}", mapDetails.Center.Latitude, mapDetails.Center.Longitude));
-                dictionary.Add("zoom", ConvertZoomToRange(mapDetails.Zoom).ToString());
+                if (mapDetails.Center != null) url.SetQueryParam("center", string.Format("{0},{1}", mapDetails.Center.Latitude, mapDetails.Center.Longitude));
+                url.SetQueryParam("zoom", ConvertZoomToRange(mapDetails.Zoom).ToString());
             }
             else
             {
-                dictionary.Add("path", "enc:" + mapDetails.EncodedPolyline);
+                url.SetQueryParam("path", "enc:" + mapDetails.EncodedPolyline);
             }
-            return dictionary;
+
+            return new Uri(url, UriKind.Absolute);
         }
 
         private static int ConvertZoomToRange(double? zoom)
