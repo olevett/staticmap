@@ -26,5 +26,12 @@ xmlns:staticMaps="using:StaticMaps"
 </Grid>
 ```
 
+### Properties on the control
+- __MapProvider__ sets the source of generated maps. This is required for anything to happen. Must implement {{IMapProvider}}, with {{GoogleMapsProvider}} currently the only one available
+- __Center__ sets where the map should be centred, must be of type Coordinate. Optional, and shouldn't be used with __EncodedPolyline__
+- __EncodedPolyline__ displays an [encoded polyline](https://developers.google.com/maps/documentation/utilities/polylinealgorithm) on the map, shouldn't be used with __Center__
+
+The height and width of the supplied static image are inferred automatically from the size of the control.
+
 ## Supported Providers
 Currently, only GoogleMaps is supported, using the GoogleMapsProvider.
