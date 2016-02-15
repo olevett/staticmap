@@ -32,7 +32,7 @@ namespace StaticMaps
 
         private static void OnMapProviderPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var sender = d as StaticMap;
+            var sender = (StaticMap)d;
             sender.UpdateMap();
         }
 
@@ -47,7 +47,7 @@ namespace StaticMaps
 
         private static void OnCenterPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var sender = d as StaticMap;
+            var sender = (StaticMap)d;
             sender.UpdateMap();
         }
 
@@ -62,7 +62,7 @@ namespace StaticMaps
 
         private static void OnEncodedPolylinePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var sender = d as StaticMap;
+            var sender = (StaticMap)d;
             sender.UpdateMap();
         }
 
