@@ -28,7 +28,15 @@ Task("RestoreNugetPackages")
     }
 });
 
+Task("UpdateAppVeyorBuildNumber")
+    .WithCriteria(() => AppVeyor.IsRunningOnAppVeyor)
+    .Does(() =>
+{
+    AppVeyor.UpdateBuildVersion(GitVersion().FullSemVer);
+});
+
 Task("UpdateAssemblyInfo")
+    .IsDependentOn("UpdateAppVeyorBuildNumber")
     .Does(() =>
 {
     GitVersion(new GitVersionSettings {
