@@ -17,15 +17,20 @@ namespace StaticMaps
         /// <returns>Uri of a map image</returns>
         public Uri GetStaticMap(MapDetails mapDetails)
         {
-            if (mapDetails == null) throw new ArgumentNullException("mapDetails");
+            if (mapDetails == null) throw new ArgumentNullException(nameof(mapDetails));
 
             var url = new Url(GoogleMapsEndPoint);
 
-            url.SetQueryParam("size", string.Format("{0}x{1}", mapDetails.Width, mapDetails.Height));
+            url.SetQueryParam("size", $"{mapDetails.Width}x{mapDetails.Height}");
 
             if (string.IsNullOrEmpty(mapDetails.EncodedPolyline))
             {
-                if (mapDetails.Center != null) url.SetQueryParam("center", string.Format("{0},{1}", mapDetails.Center.Latitude, mapDetails.Center.Longitude));
+                if(mapDetails.Center != null)
+                {
+                    url.SetQueryParam("center",
+                        $"{mapDetails.Center.Latitude},{mapDetails.Center.Longitude}");
+                }
+
                 url.SetQueryParam("zoom", ConvertZoomToRange(mapDetails.Zoom).ToString());
             }
             else
